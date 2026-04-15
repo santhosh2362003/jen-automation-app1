@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fullstack Docker</title>
+</head>
+<body>
+    <h1>Dockerized Full Stack App</h1>
+    <div id="data">Loading from API...</div>
+
+    <script>
+        // Backend API-ஐ அழைப்பதற்கான ஸ்கிரிப்ட்
+        fetch('http://localhost:5000/api')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('data').innerText = data.message;
+            })
+            .catch(err => console.error("Error:", err));
+    </script>
+</body>
+</html>
